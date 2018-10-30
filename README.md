@@ -37,7 +37,7 @@ dict_keys(['count', 'results', 'count_included', 'query_url'])
 >>>response['count_included']
 500
 >>>response['query_url']
-https://api.case.law/v1/cases/?jurisdiction=alaska&full_case=true&decision_date_min=2001-04-01
+'https://api.case.law/v1/cases/?jurisdiction=alaska&full_case=true&decision_date_min=2001-04-01'
 >>>response['results'][0].keys()
 dict_keys(['id', 'url', 'name', 'name_abbreviation', 'decision_date', 'docket_number', 'first_page', 'last_page', 'citations', 'volume', 'reporter', 'court', 'jurisdiction', 'casebody'])
 ```
