@@ -13,10 +13,20 @@ class Reporter:
             return v1.cases(max_pages, **kwargs)
         else:
             raise ValueError(f'Version {self.api_version} is not supported')
+    
+    def citations(self, max_pages=1, **kwargs):
+        if self.api_version == 1:
+            return v1.citations(max_pages, **kwargs)
+        else:
+            raise ValueError(f'Version {self.api_version} is not supported')
+
 
 if __name__ == "__main__":
     r = Reporter()
-    #response = r.cases(cite='2 Ill. App. 3d 538', full_case=True)
+    #response = r.cases(max_pages=1, cite='2 Ill. App. 3d 538', full_case=True)
+    response = r.citations(max_pages=5)
+    print(response['count_included'])
+    '''
     response = r.cases(max_pages=5, jurisdiction='alaska', full_case=True,
             decision_date_min='2001-04-01')
     print(response.keys())
@@ -28,3 +38,4 @@ if __name__ == "__main__":
     print(response['query_url'])
     print(">>>response['results'][0].keys()")
     print(response['results'][0].keys())
+    '''
