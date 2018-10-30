@@ -21,15 +21,7 @@ retrieve up to `max_pages` API calls and concatenate the `results` of all of
 them.
 
 ```python
->>>response = wheaton.case('2 Ill. App. 3d 538')
->>>response
-{'count': 1, 'count_included': 1, 'url': "THE_URL", 'results': {...}}
->>>response['results'][0].
-dict_keys(['id', 'url', 'name', 'name_abbreviation', 'decision_date', 'docket_number', 'first_page', 'last_page', 'citations', 'volume', 'reporter', 'court', 'jurisdiction', 'casebody'])
-```
-
-```python
->>>response = r.cases(max_pages=5, jurisdiction='alaska', full_case=True, decision_date_min='2001-04-01')
+>>>response = Reporter.cases(max_pages=5, jurisdiction='alaska', full_case=True, decision_date_min='2001-04-01')
 >>>response.keys()
 dict_keys(['count', 'results', 'count_included', 'query_url'])
 >>>response['count']
@@ -41,8 +33,6 @@ dict_keys(['count', 'results', 'count_included', 'query_url'])
 >>>response['results'][0].keys()
 dict_keys(['id', 'url', 'name', 'name_abbreviation', 'decision_date', 'docket_number', 'first_page', 'last_page', 'citations', 'volume', 'reporter', 'court', 'jurisdiction', 'casebody'])
 ```
-
-The contents of results
 
 # TODO
 - [x] cases
