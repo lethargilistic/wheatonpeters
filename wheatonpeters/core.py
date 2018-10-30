@@ -1,11 +1,11 @@
 import requests
 
 class Reporter:
-    def __init__(self, version=1):
-        if not isinstance(version, int) or version < 1:
-            raise ValueError('The version must be an integer greater than 0')
+    def __init__(self, api_version=1):
+        if not isinstance(api_version, int) or api_version < 1:
+            raise ValueError('The api_version must be an integer greater than 0')
         versions = [0, 'v1']
-        self.BASE_URL = f'https://api.case.law/{versions[version]}/'
+        self.BASE_URL = f'https://api.case.law/{versions[api_version]}/'
 
     def cases(self, max_pages=1, **kwargs):
         if max_pages < 1:
