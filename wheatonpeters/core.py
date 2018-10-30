@@ -23,10 +23,10 @@ class Reporter:
 
 if __name__ == "__main__":
     r = Reporter()
-    #response = r.cases(max_pages=1, cite='2 Ill. App. 3d 538', full_case=True)
-    response = r.citations(max_pages=5)
+    response = r.cases(max_pages=1, cite='2 Ill. App. 3d 538', full_case=True)
+    #response = r.citations(max_pages=5)
     print(response['count_included'])
-    '''
+    
     response = r.cases(max_pages=5, jurisdiction='alaska', full_case=True,
             decision_date_min='2001-04-01')
     print(response.keys())
@@ -38,4 +38,4 @@ if __name__ == "__main__":
     print(response['query_url'])
     print(">>>response['results'][0].keys()")
     print(response['results'][0].keys())
-    '''
+    
