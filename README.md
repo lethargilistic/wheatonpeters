@@ -1,10 +1,10 @@
-#WheatonPeters
+# WheatonPeters
 
 This Python wrapper grants easy access to the [CAPAPI](https://case.law/api/)
 provided by the [Caselaw Access Project](https://case.law/). It liberates state
 and federal court cases.
 
-#Usage
+# Usage
 Start by creating a Reporter.
 
 ```python
@@ -44,19 +44,19 @@ dict_keys(['id', 'url', 'name', 'name_abbreviation', 'decision_date', 'docket_nu
 
 The contents of results
 
-#TODO
-[x] cases
-[] citations
-[] jurisdictions
-[] courts
-[] volumes
-[] reporters
-[] bulk
+# TODO
+- [x] cases
+- [ ] citations
+- [ ] jurisdictions
+- [ ] courts
+- [ ] volumes
+- [ ] reporters
+- [ ] bulk
 
-#Name
+# Name
 WheatonPeters is named for a legendary Supreme Court case, *Wheaton v. Peters*,
 between two Supreme Court reporters that determined that the text of the Court's
 decisions could not be restricted by copyright.
 
-#Platform Support
+# Platform Support
 I only use Linux, and I'm not personally going to test it on anything else.
