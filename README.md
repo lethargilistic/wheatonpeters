@@ -20,6 +20,9 @@ WheatonPeters adds some useful entries to the top level dictionary, but the
 retrieve up to `max_pages` API calls and concatenate the `results` of all of
 them.
 
+The `next` and `previous` links are the cursor links from the last page of the
+API results. Currently, WheatonPeters only goes forward through results.
+
 ```python
 >>>response = Reporter.cases(max_pages=5, jurisdiction='alaska', full_case=True, decision_date_min='2001-04-01')
 >>>response.keys()

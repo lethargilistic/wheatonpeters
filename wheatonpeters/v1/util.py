@@ -17,6 +17,11 @@ def get_paginated_results(max_pages, api_call):
         response.raise_for_status()
         curr_json = response.json()
         
+        #Replace cursor urls
+        query_result['previous'] = curr_json['previous']
+        query_result['next'] = curr_json['next']
+
+        #Append next set of results
         query_result['results'] += curr_json['results']
 
         if not curr_json['next']:
@@ -25,8 +30,6 @@ def get_paginated_results(max_pages, api_call):
         curr_api_call = curr_json['next']
         max_pages -= 1
 
-    del query_result['previous']
-    del query_result['next']
     query_result['count_included'] = len(query_result['results'])
     query_result['query_url'] = api_call
     return query_result
