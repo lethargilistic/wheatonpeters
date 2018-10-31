@@ -32,6 +32,12 @@ class Reporter:
         else:
             raise ValueError(f'jurisdictions/ is not supported for Version {self.api.VERSION_NAME}')
 
+    def reporters(self, max_pages=1, **kwargs):
+        if self.api in [v1]:
+            return self.api.reporters(max_pages, **kwargs)
+        else:
+            raise ValueError(f'volumes/ is not supported for Version {self.api.VERSION_NAME}')
+
     def volumes(self, max_pages=1, **kwargs):
         if self.api in [v1]:
             return self.api.volumes(max_pages, **kwargs)
@@ -44,9 +50,9 @@ if __name__ == "__main__":
     #response = r.jurisdictions(max_pages=1)
     #response = r.courts(max_pages=1)
     response = r.volumes(max_pages=1)
+    response = r.reporters(max_pages=1)
     #response = r.citations(max_pages=5)
     print(response['count'])
-    print(response)
     
     response = r.cases(max_pages=5, jurisdiction='alaska', full_case=True,
             decision_date_min='2001-04-01')
