@@ -39,11 +39,11 @@ dict_keys(['id', 'url', 'name', 'name_abbreviation', 'decision_date', 'docket_nu
 
 # TODO
 - [x] cases
-- [ ] citations
-- [ ] jurisdictions
-- [ ] courts
-- [ ] volumes
-- [ ] reporters
+- [x] citations
+- [x] jurisdictions
+- [x] courts
+- [x] volumes
+- [x] reporters
 - [ ] bulk
 
 # Name
