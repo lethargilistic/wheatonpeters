@@ -3,35 +3,34 @@ import v1
 
 class Reporter:
     def __init__(self, api_version=1):
-        if not isinstance(api_version, int) or api_version < 1:
-            raise ValueError('The api_version must be an integer greater than 0')
         versions = [0, v1]
+        if not isinstance(api_version, int) or not api_version < len(versions):
+            raise ValueError(f'You entered: {repr(api_version)}. It either has no support, or you did not enter an integer.')
         self.api = versions[api_version]
-        self.api_version = api_version
 
     def cases(self, max_pages=1, **kwargs):
         if self.api in [v1]:
             return self.api.cases(max_pages, **kwargs)
         else:
-            raise ValueError(f'Version {self.api_version} is not supported')
+            raise ValueError(f'cases/ is not supported for Version {self.api.VERSION_NAME}')
     
     def citations(self, max_pages=1, **kwargs):
         if self.api in [v1]:
             return self.api.citations(max_pages, **kwargs)
         else:
-            raise ValueError(f'Version {self.api_version} is not supported')
+            raise ValueError(f'citations/ is not supported for Version {self.api.VERSION_NAME}')
     
     def courts(self, max_pages=1, **kwargs):
         if self.api in [v1]:
             return self.api.courts(max_pages, **kwargs)
         else:
-            raise ValueError(f'Version {self.api_version} is not supported')
+            raise ValueError(f'courts/ is not supported for Version {self.api.VERSION_NAME}')
 
     def jurisdictions(self, max_pages=1, **kwargs):
         if self.api in [v1]:
             return self.api.jurisdictions(max_pages, **kwargs)
         else:
-            raise ValueError(f'Version {self.api_version} is not supported')
+            raise ValueError(f'jurisdictions/ is not supported for Version {self.api.VERSION_NAME}')
 
 if __name__ == "__main__":
     r = Reporter()

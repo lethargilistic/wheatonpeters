@@ -1,6 +1,7 @@
 import requests
 
 BASE_URL = f'https://api.case.law/v1/'
+VERSION_NAME = 'v1'
 
 def get_paginated_results(max_pages, api_call):
     curr_api_call = api_call
