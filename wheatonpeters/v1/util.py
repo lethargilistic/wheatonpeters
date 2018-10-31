@@ -29,3 +29,9 @@ def get_paginated_results(max_pages, api_call):
     query_result['count_included'] = len(query_result['results'])
     query_result['query_url'] = api_call
     return query_result
+
+
+def validate_keywords(expected_arguments, keywords):
+    keys = set(keywords.keys())
+    if not keys.issubset(expected_arguments):
+        raise ValueError('Unexpected kwargs:' + str(keys - expected_arguments))
